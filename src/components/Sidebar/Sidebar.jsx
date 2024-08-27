@@ -12,7 +12,7 @@ const Sidebar = () => {
 
                 <NavLink to="contact"
                          className={({isActive}) => isActive ? "active" : ""}>
-                         <span>CONTACTS</span>
+                         <span>CONTACT</span>
                 </NavLink>
                 <NavLink to="about"
                          className={({isActive}) => isActive ? "active" : ""}>
