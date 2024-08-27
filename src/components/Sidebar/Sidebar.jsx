@@ -14,6 +14,10 @@ const Sidebar = () => {
                          className={({isActive}) => isActive ? "active" : ""}>
                          <span>CONTACTS</span>
                 </NavLink>
+                <NavLink to="about"
+                         className={({isActive}) => isActive ? "active" : ""}>
+                    <span>ABOUT</span>
+                </NavLink>
             </nav>
         </div>
     );
