@@ -1,21 +1,34 @@
-import {Outlet} from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar.jsx";
 import Header from "../../components/Header/Header.jsx";
-import './Layout.css'
+import { isAuthenticated, logout } from "../../services/authService";
+import './Layout.css';
 
 const Layout = () => {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+    };
+
+    // Check if the user is authenticated
+    if (!isAuthenticated()) {
+        navigate("/login");
+        return null; // Prevent rendering the layout if not authenticated
+    }
+
     return (
         <div>
             <div className="layout-container">
-                <div>
-                    <Header/>
-                </div>
-                <div>
-                    <Sidebar/>
-                </div>
+                <Header />
+                <Sidebar />
                 <div className="outlet-container">
-                    <Outlet/>
+                    <Outlet />
                 </div>
+                <button className="logout-button" onClick={handleLogout}>
+                    Logout
+                </button>
             </div>
         </div>
     );
