@@ -1,7 +1,5 @@
-// Login.jsx
-
-import { useNavigate } from 'react-router-dom';
-import { login } from '../../services/authService';  // Adjust the path as needed
+import {useNavigate} from 'react-router-dom';
+import {login} from '../../services/authService';  // Adjust the path as needed
 import './Login.css';
 import {useState} from "react";  // Import the CSS file
 

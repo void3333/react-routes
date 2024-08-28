@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import {createBrowserRouter} from 'react-router-dom';
 import Layout from '../pages/Layout/Layout.jsx';
 import Home from '../pages/Home/Home.jsx';
 import Contact from '../pages/Contact/Contact.jsx';
@@ -9,13 +9,13 @@ import ProtectedRoute from '../components/ProtectedRoute.jsx';
 const routes = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />,
+        element: <Layout/>,
         children: [
             {
                 path: 'home',
                 element: (
                     <ProtectedRoute>
-                        <Home />
+                        <Home/>
                     </ProtectedRoute>
                 ),
             },
@@ -23,7 +23,7 @@ const routes = createBrowserRouter([
                 path: 'contact',
                 element: (
                     <ProtectedRoute>
-                        <Contact />
+                        <Contact/>
                     </ProtectedRoute>
                 ),
             },
@@ -31,7 +31,7 @@ const routes = createBrowserRouter([
                 path: 'about',
                 element: (
                     <ProtectedRoute>
-                        <About />
+                        <About/>
                     </ProtectedRoute>
                 ),
             },
@@ -39,7 +39,7 @@ const routes = createBrowserRouter([
     },
     {
         path: '/login',
-        element: <Login />,
+        element: <Login/>,
     },
 ]);
 
